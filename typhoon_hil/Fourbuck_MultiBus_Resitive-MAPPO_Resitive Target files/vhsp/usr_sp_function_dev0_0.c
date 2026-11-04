@@ -1,0 +1,920 @@
+// generated using template: cop_main.template---------------------------------------------
+/******************************************************************************************
+**
+**  Module Name: cop_main.c
+**  NOTE: Automatically generated file. DO NOT MODIFY!
+**  Description:
+**            Main file
+**
+******************************************************************************************/
+// generated using template: arm/custom_include.template-----------------------------------
+
+
+#ifdef __cplusplus
+#include <limits>
+
+extern "C" {
+#endif
+
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <math.h>
+#include <stdint.h>
+#include <complex.h>
+#include <time.h>
+#include <stdarg.h>
+
+// x86 libraries:
+#include "../include/sp_functions_dev0.h"
+
+
+#ifdef __cplusplus
+}
+#endif
+
+
+// ----------------------------------------------------------------------------------------                // generated using template:generic_macros.template-----------------------------------------
+/*********************** Macros (Inline Functions) Definitions ***************************/
+
+// ----------------------------------------------------------------------------------------
+
+#ifndef MAX
+#define MAX(value, limit) (((value) > (limit)) ? (value) : (limit))
+#endif
+#ifndef MIN
+#define MIN(value, limit) (((value) < (limit)) ? (value) : (limit))
+#endif
+
+// generated using template: VirtualHIL/custom_defines.template----------------------------
+
+typedef unsigned char X_UnInt8;
+typedef char X_Int8;
+typedef signed short X_Int16;
+typedef unsigned short X_UnInt16;
+typedef int X_Int32;
+typedef unsigned int X_UnInt32;
+typedef unsigned int uint;
+typedef double real;
+
+// ----------------------------------------------------------------------------------------
+// generated using template: custom_consts.template----------------------------------------
+
+// arithmetic constants
+#define C_SQRT_2                    1.4142135623730950488016887242097f
+#define C_SQRT_3                    1.7320508075688772935274463415059f
+#define C_PI                        3.1415926535897932384626433832795f
+#define C_E                         2.7182818284590452353602874713527f
+#define C_2PI                       6.283185307179586476925286766559f
+
+//@cmp.def.start
+//component defines
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//@cmp.def.end
+
+
+//-----------------------------------------------------------------------------------------
+// generated using template: common_variables.template-------------------------------------
+// true global variables
+
+
+
+
+
+// const variables
+
+static const real _constant2__p_value = 0.25;
+
+
+static const real _constant3__p_value = 0.0;
+
+
+static const real _constant4__p_value = 0.0;
+
+static const int _il1_ia1__n_rd_as = 13107200;
+static const unsigned int _il1_ia1__p_addr = 8;
+static const char* _il1_ia1__p_sig_output = "True";
+
+static const int _il2_ia1__n_rd_as = 13107200;
+static const unsigned int _il2_ia1__p_addr = 9;
+static const char* _il2_ia1__p_sig_output = "True";
+
+static const int _il3_ia1__n_rd_as = 13107200;
+static const unsigned int _il3_ia1__p_addr = 520;
+static const char* _il3_ia1__p_sig_output = "True";
+
+static const int _il4_ia1__n_rd_as = 13107200;
+static const unsigned int _il4_ia1__p_addr = 521;
+static const char* _il4_ia1__p_sig_output = "True";
+
+static const int _il5_ia1__n_rd_as = 13107200;
+static const unsigned int _il5_ia1__p_addr = 10;
+static const char* _il5_ia1__p_sig_output = "True";
+
+static const int _il6_ia1__n_rd_as = 13107200;
+static const unsigned int _il6_ia1__p_addr = 11;
+static const char* _il6_ia1__p_sig_output = "True";
+
+static const int _il7_ia1__n_rd_as = 13107200;
+static const unsigned int _il7_ia1__p_addr = 522;
+static const char* _il7_ia1__p_sig_output = "True";
+
+static const int _il8_ia1__n_rd_as = 13107200;
+static const unsigned int _il8_ia1__p_addr = 523;
+static const char* _il8_ia1__p_sig_output = "True";
+
+static const int _vdc1_va1__n_rd_as = 13107200;
+static const unsigned int _vdc1_va1__p_addr = 4;
+static const char* _vdc1_va1__p_sig_output = "True";
+
+static const int _vdc2_va1__n_rd_as = 13107200;
+static const unsigned int _vdc2_va1__p_addr = 5;
+static const char* _vdc2_va1__p_sig_output = "True";
+
+static const int _vdc3_va1__n_rd_as = 13107200;
+static const unsigned int _vdc3_va1__p_addr = 516;
+static const char* _vdc3_va1__p_sig_output = "True";
+
+static const int _vdc4_va1__n_rd_as = 13107200;
+static const unsigned int _vdc4_va1__p_addr = 517;
+static const char* _vdc4_va1__p_sig_output = "True";
+
+static const int _vo1_va1__n_rd_as = 13107200;
+static const unsigned int _vo1_va1__p_addr = 6;
+static const char* _vo1_va1__p_sig_output = "True";
+
+static const int _vo2_va1__n_rd_as = 13107200;
+static const unsigned int _vo2_va1__p_addr = 7;
+static const char* _vo2_va1__p_sig_output = "True";
+
+static const int _vo3_va1__n_rd_as = 13107200;
+static const unsigned int _vo3_va1__p_addr = 518;
+static const char* _vo3_va1__p_sig_output = "True";
+
+static const int _vo4_va1__n_rd_as = 13107200;
+static const unsigned int _vo4_va1__p_addr = 519;
+static const char* _vo4_va1__p_sig_output = "True";
+
+static const char* _s1_single_s1_ideal_ctc_wrapper__n_ctrl_src_val = "Model";
+static const char* _s1_single_s1_ideal_ctc_wrapper__n_enable_fb_out_val = "False";
+static const int _s1_single_s1_ideal_ctc_wrapper__n_rd_ds = 16252928;
+static const int _s1_single_s1_ideal_ctc_wrapper__n_spc_baseaddr = 134217728;
+static const int _s1_single_s1_ideal_ctc_wrapper__n_spc_ct = 2359296;
+static const int _s1_single_s1_ideal_ctc_wrapper__n_spc_ct_sw_ctrl_val = 1152;
+static const int _s1_single_s1_ideal_ctc_wrapper__n_spc_do_baseaddr = 1024;
+static const int _s1_single_s1_ideal_ctc_wrapper__n_spc_do_mem_width = 15;
+static const int _s1_single_s1_ideal_ctc_wrapper__n_spc_off = 4194304;
+static const int _s1_single_s1_ideal_ctc_wrapper__p_ctc_nb = 0;
+static const int _s1_single_s1_ideal_ctc_wrapper__p_spc_nb = 0;
+
+static const char* _s2_single_s1_ideal_ctc_wrapper__n_ctrl_src_val = "Model";
+static const char* _s2_single_s1_ideal_ctc_wrapper__n_enable_fb_out_val = "False";
+static const int _s2_single_s1_ideal_ctc_wrapper__n_rd_ds = 16252928;
+static const int _s2_single_s1_ideal_ctc_wrapper__n_spc_baseaddr = 134217728;
+static const int _s2_single_s1_ideal_ctc_wrapper__n_spc_ct = 2359296;
+static const int _s2_single_s1_ideal_ctc_wrapper__n_spc_ct_sw_ctrl_val = 1152;
+static const int _s2_single_s1_ideal_ctc_wrapper__n_spc_do_baseaddr = 1024;
+static const int _s2_single_s1_ideal_ctc_wrapper__n_spc_do_mem_width = 15;
+static const int _s2_single_s1_ideal_ctc_wrapper__n_spc_off = 4194304;
+static const int _s2_single_s1_ideal_ctc_wrapper__p_ctc_nb = 1;
+static const int _s2_single_s1_ideal_ctc_wrapper__p_spc_nb = 0;
+
+static const int _probe1__n_out_size = 1;
+static const unsigned int _probe1__p_addr = 16384;
+
+static const int _probe2__n_out_size = 1;
+static const unsigned int _probe2__p_addr = 16385;
+
+static const int _probe3__n_out_size = 1;
+static const unsigned int _probe3__p_addr = 16386;
+
+static const int _probe4__n_out_size = 1;
+static const unsigned int _probe4__p_addr = 16387;
+
+static const int _sum1__n_in_size = 1;
+static const int _sum1__n_num_of_inputs = 4;
+static const unsigned char _sum1__n_signs_bool[4] = {1, 1, 1, 1};
+
+
+static const int _product1__n_in_size = 1;
+static const int _product1__n_num_of_terminals = 2;
+static const unsigned char _product1__n_signs_bool[2] = {1, 1};
+
+
+static const int _probe5__n_out_size = 1;
+static const unsigned int _probe5__p_addr = 16388;
+
+
+//@cmp.var.start
+// variables
+static real _constant2__out;
+static real _constant3__out;
+static real _constant4__out;
+real _il1_ia1__out;
+real _il2_ia1__out;
+real _il3_ia1__out;
+real _il4_ia1__out;
+real _il5_ia1__out;
+real _il6_ia1__out;
+real _il7_ia1__out;
+real _il8_ia1__out;
+double _pwm_analyzer1__freq;
+double _pwm_analyzer1__duty_cycle;
+X_Int32 _pwm_analyzer1__period_cnt[1];
+X_Int32 _pwm_analyzer1__status_raw;
+X_Int32 _pwm_analyzer1__status = 0;
+double _pwm_analyzer2__freq;
+double _pwm_analyzer2__duty_cycle;
+X_Int32 _pwm_analyzer2__period_cnt[1];
+X_Int32 _pwm_analyzer2__status_raw;
+X_Int32 _pwm_analyzer2__status = 0;
+double _pwm_analyzer3__freq;
+double _pwm_analyzer3__duty_cycle;
+X_Int32 _pwm_analyzer3__period_cnt[1];
+X_Int32 _pwm_analyzer3__status_raw;
+X_Int32 _pwm_analyzer3__status = 0;
+double _pwm_analyzer4__freq;
+double _pwm_analyzer4__duty_cycle;
+X_Int32 _pwm_analyzer4__period_cnt[1];
+X_Int32 _pwm_analyzer4__status_raw;
+X_Int32 _pwm_analyzer4__status = 0;
+real _vdc1_va1__out;
+real _vdc2_va1__out;
+real _vdc3_va1__out;
+real _vdc4_va1__out;
+real _vo1_va1__out;
+real _vo2_va1__out;
+real _vo3_va1__out;
+real _vo4_va1__out;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+static real _sum1__out;
+static real _product1__out;
+
+
+
+//@cmp.var.end
+
+//@cmp.svar.start
+// state variables
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//@cmp.svar.end
+
+// IO shared variables
+
+//
+// Tunable parameters
+//
+static struct Tunable_params {
+} __attribute__((__packed__)) tunable_params;
+
+void *tunable_params_dev0_cpu0_ptr = &tunable_params;
+
+// Dll function pointers
+#if defined(_WIN64)
+#else
+// Define handles for loading dlls
+#endif
+
+
+
+
+
+// generated using template: \templates\virtual_hil\fmi_custom_logger_fncs.template---------------------------------
+#include <stdarg.h>
+
+
+
+//
+// DMA buffers
+//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// generated using template: virtual_hil/custom_functions.template---------------------------------
+void ReInit_user_sp_cpu0_dev0() {
+#if DEBUG_MODE
+    printf("\n\rReInitTimer");
+#endif
+    //@cmp.init.block.start
+    HIL_OutInt32(0x2800080, 1);
+    HIL_OutInt32(0x2800100, 0);
+    HIL_OutInt32(0x2800180, 0);
+    HIL_OutInt32(0x2800081, 1);
+    HIL_OutInt32(0x2800101, 0);
+    HIL_OutInt32(0x2800181, 1);
+    HIL_OutInt32(0x2800082, 1);
+    HIL_OutInt32(0x2800102, 0);
+    HIL_OutInt32(0x2800182, 2);
+    HIL_OutInt32(0x2800083, 1);
+    HIL_OutInt32(0x2800103, 0);
+    HIL_OutInt32(0x2800183, 3);
+    {
+        HIL_OutAO(0x4000, 0);
+    }
+    {
+        HIL_OutAO(0x4001, 0);
+    }
+    {
+        HIL_OutAO(0x4002, 0);
+    }
+    {
+        HIL_OutAO(0x4003, 0);
+    }
+    {
+        HIL_OutAO(0x4004, 0);
+    }
+    //@cmp.init.block.end
+}
+
+
+// Dll function pointers and dll reload function
+#if defined(_WIN64)
+// Define method for reloading dll functions
+void ReloadDllFunctions_user_sp_cpu0_dev0(void) {
+    // Load each library and setup function pointers
+}
+
+void FreeDllFunctions_user_sp_cpu0_dev0(void) {
+}
+
+#else
+// Define method for reloading dll functions
+void ReloadDllFunctions_user_sp_cpu0_dev0(void) {
+    // Load each library and setup function pointers
+}
+
+void FreeDllFunctions_user_sp_cpu0_dev0(void) {
+}
+#endif
+
+void load_fmi_libraries_user_sp_cpu0_dev0(void) {
+#if defined(_WIN64)
+#else
+#endif
+}
+
+
+void ReInit_sp_scope_user_sp_cpu0_dev0() {
+    // initialise SP Scope buffer pointer
+}
+
+
+// generated using template: virtual_hil/common_timer_counter_handler.template-------------------------
+
+/*****************************************************************************************/
+/**
+* This function is the handler which performs processing for the timer counter.
+* It is called from an interrupt context such that the amount of processing
+* performed should be minimized.  It is called when the timer counter expires
+* if interrupts are enabled.
+*
+*
+* @param    None
+*
+* @return   None
+*
+* @note     None
+*
+*****************************************************************************************/
+
+void TimerCounterHandler_0_user_sp_cpu0_dev0() {
+#if DEBUG_MODE
+    printf("\n\rTimerCounterHandler_0");
+#endif
+    //////////////////////////////////////////////////////////////////////////
+    // Output block
+    //////////////////////////////////////////////////////////////////////////
+    //@cmp.out.block.start
+    // Generated from the component: Constant2
+    {
+        _constant2__out = _constant2__p_value;
+    }
+    // Generated from the component: IL1.Ia1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80008);
+        _il1_ia1__out = tac_tmp1;
+    }
+    // Generated from the component: IL2.Ia1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80009);
+        _il2_ia1__out = tac_tmp1;
+    }
+    // Generated from the component: IL3.Ia1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80208);
+        _il3_ia1__out = tac_tmp1;
+    }
+    // Generated from the component: IL4.Ia1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80209);
+        _il4_ia1__out = tac_tmp1;
+    }
+    // Generated from the component: IL5.Ia1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc8000a);
+        _il5_ia1__out = tac_tmp1;
+    }
+    // Generated from the component: IL6.Ia1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc8000b);
+        _il6_ia1__out = tac_tmp1;
+    }
+    // Generated from the component: IL7.Ia1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc8020a);
+        _il7_ia1__out = tac_tmp1;
+    }
+    // Generated from the component: IL8.Ia1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc8020b);
+        _il8_ia1__out = tac_tmp1;
+    }
+    // Generated from the component: PWM Analyzer1
+    HIL_OutInt32(0x2800440, 1);
+    _pwm_analyzer1__period_cnt[0] = HIL_InInt32(0x2800200);
+    _pwm_analyzer1__status_raw = HIL_InInt32(0x2800040);
+    _pwm_analyzer1__status = 0;
+    _pwm_analyzer1__status += (_pwm_analyzer1__status_raw & 1) << 0;
+    if (_pwm_analyzer1__period_cnt[0] == 0)
+        _pwm_analyzer1__status += 1 << 1;
+    if ((_pwm_analyzer1__status & 0x03) != 0) {
+        _pwm_analyzer1__freq = 0;
+        _pwm_analyzer1__duty_cycle = 0;
+    }
+    else {
+        _pwm_analyzer1__freq = (double) 280000000.0 / _pwm_analyzer1__period_cnt[0];
+        _pwm_analyzer1__duty_cycle = (double) HIL_InInt32(0x2800280) / _pwm_analyzer1__period_cnt[0];
+    }
+    // Generated from the component: PWM Analyzer2
+    HIL_OutInt32(0x2800441, 1);
+    _pwm_analyzer2__period_cnt[0] = HIL_InInt32(0x2800201);
+    _pwm_analyzer2__status_raw = HIL_InInt32(0x2800041);
+    _pwm_analyzer2__status = 0;
+    _pwm_analyzer2__status += (_pwm_analyzer2__status_raw & 1) << 0;
+    if (_pwm_analyzer2__period_cnt[0] == 0)
+        _pwm_analyzer2__status += 1 << 1;
+    if ((_pwm_analyzer2__status & 0x03) != 0) {
+        _pwm_analyzer2__freq = 0;
+        _pwm_analyzer2__duty_cycle = 0;
+    }
+    else {
+        _pwm_analyzer2__freq = (double) 280000000.0 / _pwm_analyzer2__period_cnt[0];
+        _pwm_analyzer2__duty_cycle = (double) HIL_InInt32(0x2800281) / _pwm_analyzer2__period_cnt[0];
+    }
+    // Generated from the component: PWM Analyzer3
+    HIL_OutInt32(0x2800442, 1);
+    _pwm_analyzer3__period_cnt[0] = HIL_InInt32(0x2800202);
+    _pwm_analyzer3__status_raw = HIL_InInt32(0x2800042);
+    _pwm_analyzer3__status = 0;
+    _pwm_analyzer3__status += (_pwm_analyzer3__status_raw & 1) << 0;
+    if (_pwm_analyzer3__period_cnt[0] == 0)
+        _pwm_analyzer3__status += 1 << 1;
+    if ((_pwm_analyzer3__status & 0x03) != 0) {
+        _pwm_analyzer3__freq = 0;
+        _pwm_analyzer3__duty_cycle = 0;
+    }
+    else {
+        _pwm_analyzer3__freq = (double) 280000000.0 / _pwm_analyzer3__period_cnt[0];
+        _pwm_analyzer3__duty_cycle = (double) HIL_InInt32(0x2800282) / _pwm_analyzer3__period_cnt[0];
+    }
+    // Generated from the component: PWM Analyzer4
+    HIL_OutInt32(0x2800443, 1);
+    _pwm_analyzer4__period_cnt[0] = HIL_InInt32(0x2800203);
+    _pwm_analyzer4__status_raw = HIL_InInt32(0x2800043);
+    _pwm_analyzer4__status = 0;
+    _pwm_analyzer4__status += (_pwm_analyzer4__status_raw & 1) << 0;
+    if (_pwm_analyzer4__period_cnt[0] == 0)
+        _pwm_analyzer4__status += 1 << 1;
+    if ((_pwm_analyzer4__status & 0x03) != 0) {
+        _pwm_analyzer4__freq = 0;
+        _pwm_analyzer4__duty_cycle = 0;
+    }
+    else {
+        _pwm_analyzer4__freq = (double) 280000000.0 / _pwm_analyzer4__period_cnt[0];
+        _pwm_analyzer4__duty_cycle = (double) HIL_InInt32(0x2800283) / _pwm_analyzer4__period_cnt[0];
+    }
+    // Generated from the component: Vdc1.Va1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80004);
+        _vdc1_va1__out = tac_tmp1;
+    }
+    // Generated from the component: Vdc2.Va1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80005);
+        _vdc2_va1__out = tac_tmp1;
+    }
+    // Generated from the component: Vdc3.Va1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80204);
+        _vdc3_va1__out = tac_tmp1;
+    }
+    // Generated from the component: Vdc4.Va1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80205);
+        _vdc4_va1__out = tac_tmp1;
+    }
+    // Generated from the component: Vo1.Va1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80006);
+        _vo1_va1__out = tac_tmp1;
+    }
+    // Generated from the component: Vo2.Va1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80007);
+        _vo2_va1__out = tac_tmp1;
+    }
+    // Generated from the component: Vo3.Va1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80206);
+        _vo3_va1__out = tac_tmp1;
+    }
+    // Generated from the component: Vo4.Va1
+    {
+        real tac_tmp1;
+        tac_tmp1 = HIL_InFloat(0xc80207);
+        _vo4_va1__out = tac_tmp1;
+    }
+    // Generated from the component: Probe1
+    {
+        HIL_OutAO(0x4000, _pwm_analyzer1__duty_cycle);
+    }
+    // Generated from the component: Probe2
+    {
+        HIL_OutAO(0x4001, _pwm_analyzer2__duty_cycle);
+    }
+    // Generated from the component: Probe3
+    {
+        HIL_OutAO(0x4002, _pwm_analyzer3__duty_cycle);
+    }
+    // Generated from the component: Probe4
+    {
+        HIL_OutAO(0x4003, _pwm_analyzer4__duty_cycle);
+    }
+    // Generated from the component: Sum1
+    {
+        _sum1__out = 0;
+        _sum1__out += _vdc1_va1__out;
+        _sum1__out += _vdc2_va1__out;
+        _sum1__out += _vdc3_va1__out;
+        _sum1__out += _vdc4_va1__out;
+    }
+    // Generated from the component: Product1
+    {
+        _product1__out = 1;
+        _product1__out *= _sum1__out;
+        _product1__out *= _constant2__out;
+    }
+    // Generated from the component: Probe5
+    {
+        HIL_OutAO(0x4004, _product1__out);
+    }
+//@cmp.out.block.end
+    //////////////////////////////////////////////////////////////////////////
+    // Update block
+    //////////////////////////////////////////////////////////////////////////
+    //@cmp.update.block.start
+    // Generated from the component: Constant2
+    // Generated from the component: IL1.Ia1
+    // Generated from the component: IL2.Ia1
+    // Generated from the component: IL3.Ia1
+    // Generated from the component: IL4.Ia1
+    // Generated from the component: IL5.Ia1
+    // Generated from the component: IL6.Ia1
+    // Generated from the component: IL7.Ia1
+    // Generated from the component: IL8.Ia1
+    // Generated from the component: Vdc1.Va1
+    // Generated from the component: Vdc2.Va1
+    // Generated from the component: Vdc3.Va1
+    // Generated from the component: Vdc4.Va1
+    // Generated from the component: Vo1.Va1
+    // Generated from the component: Vo2.Va1
+    // Generated from the component: Vo3.Va1
+    // Generated from the component: Vo4.Va1
+    // Generated from the component: Probe1
+    // Generated from the component: Probe2
+    // Generated from the component: Probe3
+    // Generated from the component: Probe4
+    // Generated from the component: Sum1
+    // Generated from the component: Product1
+    // Generated from the component: Probe5
+    //@cmp.update.block.end
+}
+void TimerCounterHandler_1_user_sp_cpu0_dev0() {
+#if DEBUG_MODE
+    printf("\n\rTimerCounterHandler_1");
+#endif
+    //////////////////////////////////////////////////////////////////////////
+    // Output block
+    //////////////////////////////////////////////////////////////////////////
+    //@cmp.out.block.start
+    // Generated from the component: Constant3
+    {
+        _constant3__out = _constant3__p_value;
+    }
+    // Generated from the component: Constant4
+    {
+        _constant4__out = _constant4__p_value;
+    }
+    // Generated from the component: S1.Single S1 ideal.CTC_Wrapper
+    {
+        {
+            if((_constant3__out == 0)) {
+                HIL_OutInt32(0x8240480, 0);
+            }
+            else {
+                HIL_OutInt32(0x8240480, 1);
+            }
+        }
+    }
+    // Generated from the component: S2.Single S1 ideal.CTC_Wrapper
+    {
+        {
+            if((_constant4__out == 0)) {
+                HIL_OutInt32(0x8240481, 0);
+            }
+            else {
+                HIL_OutInt32(0x8240481, 1);
+            }
+        }
+    }
+//@cmp.out.block.end
+    //////////////////////////////////////////////////////////////////////////
+    // Update block
+    //////////////////////////////////////////////////////////////////////////
+    //@cmp.update.block.start
+    // Generated from the component: Constant3
+    // Generated from the component: Constant4
+    // Generated from the component: S1.Single S1 ideal.CTC_Wrapper
+    // Generated from the component: S2.Single S1 ideal.CTC_Wrapper
+    //@cmp.update.block.end
+}
+// ----------------------------------------------------------------------------------------
+//-----------------------------------------------------------------------------------------

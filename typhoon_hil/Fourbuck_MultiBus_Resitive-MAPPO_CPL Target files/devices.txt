@@ -1,0 +1,60 @@
+Czfr2Bre+mIrKt85R8O2VKENazcDUyP/ikJdDoQrGdz5tHavPln+A/Ogo4oQ+oz21ciboXpHnhxoEoiAWluoSA==
+{
+  "compilation_timestamp": "2026-11-02 08:47:46",
+  "sw_version": "2026.3",
+  "devices": [
+    {
+      "model": "HIL404",
+      "hardware_id": "9ef42856b8fe08ad775b5eff1732d67e32008b948a17397d5d0bc43936f95c88",
+      "serial_number": "00404-10-00532",
+      "activation_key": "U96VA-TFRQI-Z423N-JCPGY-4C090",
+      "end_date": "2111-08-10",
+      "maintenance_end_date": null,
+      "not_supported": null,
+      "licenses": [
+        {
+          "license_product_name": "HILCore",
+          "license_type_name": "HILCore Pro",
+          "licensee": null,
+          "attributes": {
+            "tier": "pro"
+          },
+          "end_date": "2123-10-29",
+          "maintenance_end_date": null,
+          "not_supported": null
+        }
+      ]
+    },
+    {
+      "model": "HIL602+",
+      "hardware_id": "513dcd60c5a89fe78e4e9d59b80c579efef70f816079e60290cf2da35c1d75e0",
+      "serial_number": "0602P-00-00134",
+      "activation_key": "Q0WER-96N75-JXBKF-CVHUI-CE385",
+      "end_date": "2024-11-17",
+      "maintenance_end_date": null,
+      "not_supported": {
+        "not_supported_reason": "Device license expired",
+        "not_supported_message": "License has expired for this device."
+      },
+      "licenses": [
+        {
+          "license_product_name": "HILCore",
+          "license_type_name": "HILCore Max",
+          "licensee": null,
+          "attributes": {
+            "tier": "max"
+          },
+          "end_date": "2024-11-17",
+          "maintenance_end_date": null,
+          "not_supported": {
+            "not_supported_reason": "Device license expired",
+            "not_supported_message": "License has expired for this device."
+          }
+        }
+      ]
+    }
+  ]
+}
+-----BEGIN SIGNATURE-----
+OSIS3e25mfWFMBnlJ5E47ZLdTC7C/bWbw16HlBzagByfKt8ggSe8n5Pongac0P37jvbx7EKWHgDb+vUszcbIegwT26eiqgQ4fCD46H/jVErYZFFYF4XpnVU3P/K8tuVlQ6cOqiGeAqO5rQmY7w1B4FRS4mMLa/1IC/NHOGSnaMfc4hMvdn7/5V/960r0au9EclbF4apMrnFKERrGcCBxAlTHf8S6fmovVrdRby1aJ0+Hkj1pO1l1k3P2PuixZYvF/QaGiJL2qvkaWLqT/8423//4eSRoRmNPOpA9KvZKVFtaYJiURpJhXFFA8geaMqUm8qD8pkF5djFq70yCwmEvug==
+-----END SIGNATURE-----
